@@ -1,0 +1,28 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> arr, vector<bool> flag) {
+    vector<int> answer;
+    int count = 0;
+    for(bool check : flag)
+    {
+        if(check)
+        {
+            for(int i = 0; i < (arr[count] * 2); i++)
+            {
+                answer.push_back(arr[count]);
+            }            
+        }
+        else
+        {
+            for(int i = 0; i < (arr[count]); i++)
+            {
+                answer.pop_back();
+            }  
+        }
+        count++;
+    }
+    return answer;
+}

@@ -1,0 +1,29 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+bool check_order(int n, int k)
+{
+    bool result = false;
+    if((0 <= n) && (n <= 1000))
+    {
+        result = true;
+    }
+    
+    if(((n/10) <= k) && (k < 1000))
+    {
+        result = true;
+    }
+    return result;
+}
+
+int solution(int n, int k) {
+    int answer = 0;
+    if(check_order(n, k))
+    {
+        answer = (n * 12000) + (k * 2000) - ((n/10) * 2000);
+    }
+    return answer;
+}
+
